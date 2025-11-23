@@ -1,0 +1,31 @@
+name: React project Artifact
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v5
+
+            - name: Set up Node Js Environment
+              uses: actions/setup-node@v6
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Build React App
+              run: pm run build
+
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: react-build
+                path: dist
+
+
