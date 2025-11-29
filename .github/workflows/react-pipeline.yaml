@@ -1,14 +1,14 @@
 name: React project Artifact
 
 on:
-    schedule:
-        - cron: "*/5 * * * *"
+    #schedule:
+    #    - cron: "*/5 * * * *"
 
     workflow_dispatch:
 
-  #  push:
-  #      branches:
-  #          - main
+    push:
+        branches:
+            - main
 
 jobs:
     build:
